@@ -4,10 +4,10 @@ import "./App.scss";
 // import Login from "./components/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/nav";
-import Home from "./components/home";
-import AboutUs from "./components/aboutUs";
-import ContactUs from "./components/contactUs";
-import Fortnite from "./components/fortnite";
+import Home from "./screens/home";
+import AboutUs from "./screens/aboutUs";
+import ContactUs from "./screens/contactUs";
+import Fortnite from "./screens/fortnite";
 function App() {
   return (
     <React.Fragment>
@@ -16,8 +16,8 @@ function App() {
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/aboutUs" component={ContactUs} />
-          <Route path="/contactUs" component={AboutUs} />
+          <Route path="/aboutUs" component={AboutUs} />
+          <Route path="/contactUs" component={ContactUs} />
           <Route path="/fortnite" component={Fortnite} />
         </Switch>
       </Router>

@@ -1,5 +1,112 @@
+@import "./scss/media.scss";
+@import "./scss/variable.scss";
+
 .nav {
   & > li {
     cursor: pointer;
+  }
+}
+
+.container-screen {
+  height: calc(100vh - 56px);
+  margin-top: 56px;
+  overflow-y: auto;
+}
+
+.home {
+  & > .background {
+    position: relative;
+    background: url("./assets/images/star-bg.jpg");
+    height: calc(100vh - 56px);
+    &:after {
+      content: "Star Wars is an American epic space-opera media franchise created by George Lucas. The franchise began with the eponymous 1977 film and quickly became a worldwide pop-culture phenomenon.";
+      position: absolute;
+      top: 0;
+      width: 70%;
+      color: white;
+      padding: 40px;
+      background: #0c0f20;
+      align-items: center;
+      display: flex;
+      height: 100%;
+      clip-path: polygon(0 19%, 100% 19%, 100% 77%, 0 77%);
+    }
+  }
+}
+
+.about-us {
+  width: 100vw;
+  & > .background {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background: url("./assets/images/star-wars-search.jpg");
+    z-index: -1;
+  }
+  & .film-cards {
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
+    @include large {
+      grid-template-columns: 25% 25% 25%;
+    }
+    @include medium {
+      grid-template-columns: 45% 45%;
+    }
+    justify-content: space-between;
+    margin-top: 50px;
+    & > li {
+      cursor: pointer;
+      list-style-type: none;
+      padding: 25px;
+    }
+    & > li.active {
+      border: 1px solid blueviolet;
+    }
+  }
+}
+
+.contact-us {
+  width: 100vw;
+  & > .background {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background: url("./assets/images/star\ \(2\).jpg");
+    z-index: -2;
+  }
+  & > .overlay {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background: #000000d9;
+    z-index: -1;
+  }
+  & > main {
+    & > form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      & > textarea {
+        padding: 10px;
+        margin: 10px;
+      }
+      & > input:not([type="submit"]) {
+        @extend textarea;
+        min-width: 250px;
+        width: 100%;
+        flex-grow: 1;
+        @include large {
+          width: 48%;
+        }
+      }
+      & > input[type="submit"] {
+        @extend textarea;
+        margin-top: 50px;
+        width: fit-content;
+      }
+    }
   }
 }
