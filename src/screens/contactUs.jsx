@@ -21,7 +21,7 @@ function ContactUs() {
   return (
     <React.Fragment>
       <div className="contact-us container-screen">
-        <div class="background"></div>
+        <div className="background"></div>
         <div className="overlay"></div>
         <main className="p-3">
           <form className="w-100" onSubmit={event => handleForm(event)}>

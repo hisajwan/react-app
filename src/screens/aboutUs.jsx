@@ -20,7 +20,7 @@ const AboutUs = () => {
   return (
     <React.Fragment>
       <div className="about-us container-screen">
-        <div class="background"></div>
+        <div className="background"></div>
         <main className="p-3">
           <h3 className="text-light">Star wars blockbusters:</h3>
           <article>
