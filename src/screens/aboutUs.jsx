@@ -1,16 +1,35 @@
 import React, { useState, useEffect } from "react";
 
 const AboutUs = () => {
-  const styles = { backgroundColor: "white", fontWeight: "bolder" };
   useEffect(() => {
     fetchFilms();
+    return () => abortRequest();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const controller = new AbortController();
+  const signal = controller.signal;
+  const styles = { backgroundColor: "white", fontWeight: "bolder" };
   const [films, setFilm] = useState([]);
+
+  const abortRequest = () => {
+    console.log("abort");
+    controller.abort();
+  };
+
   async function fetchFilms() {
-    const filmsResponse = await fetch("https://swapi.co/api/films");
-    const filmsData = await filmsResponse.json();
-    setFilm(filmsData.results);
-    console.log(filmsData);
+    console.log("fetch");
+    try {
+      const filmsResponse = await fetch("https://swapi.co/api/films", {
+        signal
+      });
+      const filmsData = await filmsResponse.json();
+      setFilm(filmsData.results);
+      controller.abort();
+      console.log(filmsData);
+    } catch (error) {
+      console.log("request aborted", error);
+    }
   }
 
   const showDetails = event => {

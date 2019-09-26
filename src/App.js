@@ -8,6 +8,8 @@ import Home from "./screens/home";
 import AboutUs from "./screens/aboutUs";
 import ContactUs from "./screens/contactUs";
 import Fortnite from "./screens/fortnite";
+import Login from "./screens/login";
+import MapContainer from "./screens/mapContainter";
 function App() {
   return (
     <React.Fragment>
@@ -19,6 +21,8 @@ function App() {
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/contactUs" component={ContactUs} />
           <Route path="/fortnite" component={Fortnite} />
+          <Route path="/login" component={Login} />
+          <Route path="/map" component={MapContainer} />
         </Switch>
       </Router>
     </React.Fragment>

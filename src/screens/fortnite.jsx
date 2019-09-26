@@ -19,6 +19,9 @@ function Fortnite() {
   return (
     <React.Fragment>
       <div className="p-3">Fortnite</div>
+      {items.map(() => (
+        <li>fortnite</li>
+      ))}
     </React.Fragment>
   );
 }

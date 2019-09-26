@@ -10,6 +10,17 @@ class Login extends Component {
     this.fetchData();
   }
 
+  // fetch post data
+  // fetchPostData = async () => {
+  //   const postRequest = fetch("https://jsonplaceholder.typicode.com/users", {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json"
+  //     },
+  //     body: JSON.stringify({})
+  //   });
+  // };
+
   fetchData = async () => {
     const data = await fetch("https://jsonplaceholder.typicode.com/users");
     const items = await data.json();
