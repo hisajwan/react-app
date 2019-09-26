@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-app/static/css/main.65addd39.chunk.css",
+    "main.js": "/react-app/static/js/main.a8492bf4.chunk.js",
+    "main.js.map": "/react-app/static/js/main.a8492bf4.chunk.js.map",
+    "runtime~main.js": "/react-app/static/js/runtime~main.02de2757.js",
+    "runtime~main.js.map": "/react-app/static/js/runtime~main.02de2757.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/react-app/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.2e2468ba.chunk.js": "/react-app/static/js/2.2e2468ba.chunk.js",
+    "static/js/2.2e2468ba.chunk.js.map": "/react-app/static/js/2.2e2468ba.chunk.js.map",
+    "index.html": "/react-app/index.html",
+    "precache-manifest.43f3e04f9c7a3cc914ff6add36b0ebee.js": "/react-app/precache-manifest.43f3e04f9c7a3cc914ff6add36b0ebee.js",
+    "service-worker.js": "/react-app/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/react-app/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.65addd39.chunk.css.map": "/react-app/static/css/main.65addd39.chunk.css.map",
+    "static/media/App.scss": "/react-app/static/media/star-wars-search.bbf08bd6.jpg"
+  }
+}
