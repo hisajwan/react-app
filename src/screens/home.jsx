@@ -13,9 +13,6 @@ function Home(props) {
   // const counter = useSelector(state => state.counter);
   // const dispatch = useDispatch();
   const [redirectToMap, setredirectToMap] = useState(false);
-  window.addEventListener("message", function(e) {
-    window.alert("postMessage", e);
-  });
 
   const handleClick = () => {
     setredirectToMap(true);
