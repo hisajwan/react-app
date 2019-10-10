@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-const AboutUs = () => {
+// import { connect } from "react-redux";
+const AboutUs = props => {
   useEffect(() => {
     fetchFilms();
     return () => abortRequest();
@@ -18,7 +18,6 @@ const AboutUs = () => {
   };
 
   async function fetchFilms() {
-    console.log("fetch");
     try {
       const filmsResponse = await fetch("https://swapi.co/api/films", {
         signal
@@ -32,7 +31,7 @@ const AboutUs = () => {
     }
   }
 
-  const showDetails = event => {
+  const showDetails = (event, index) => {
     console.log(event);
   };
 
@@ -47,7 +46,7 @@ const AboutUs = () => {
               {films.map((film, index) => (
                 <li
                   style={styles}
-                  onClick={event => showDetails(event)}
+                  onClick={event => showDetails(event, index)}
                   key={`film-${film.name}-index${index}`}
                 >
                   <span>{film.title}</span>
@@ -60,5 +59,4 @@ const AboutUs = () => {
     </React.Fragment>
   );
 };
-
 export default AboutUs;

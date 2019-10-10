@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
-// import { useSelector, useDispatch } from "react-redux";
-// import { increment, decrement } from "../actions";
 function Home(props) {
-  // const style = {
-  //   cursor: "pointer",
-  //   width: "max-content",
-  //   top: 0
-  // };
-  // const counter = useSelector(state => state.counter);
-  // const dispatch = useDispatch();
   const [redirectToMap, setredirectToMap] = useState(false);
 
   const handleClick = () => {

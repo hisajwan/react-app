@@ -1,30 +1,20 @@
-import React from "react";
-// import logo from "./logo.svg";
+import React, { Suspense } from "react";
 import "./App.scss";
-// import Login from "./components/login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import Nav from "./components/nav";
-import Home from "./screens/home";
-import AboutUs from "./screens/aboutUs";
-import ContactUs from "./screens/contactUs";
-import Fortnite from "./screens/fortnite";
-import Login from "./screens/login";
-import MapContainer from "./screens/mapContainter";
+import Routes from "./routes";
+import FloatRight from "./components/floatRight";
 function App() {
   return (
     <React.Fragment>
-      {/* <Login /> */}
-      <Router>
+      <Router basename="">
         <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/aboutUs" component={AboutUs} />
-          <Route path="/contactUs" component={ContactUs} />
-          <Route path="/fortnite" component={Fortnite} />
-          <Route path="/login" component={Login} />
-          <Route path="/map" component={MapContainer} />
-        </Switch>
+        {/* For lazy loading */}
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes />
+        </Suspense>
       </Router>
+      <FloatRight />
     </React.Fragment>
   );
 }
