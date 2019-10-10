@@ -12,13 +12,14 @@ const Login = props => {
   });
   const login = e => {
     e.preventDefault();
+    console.log("sdfa");
     let authStatus = auth.login(() => {
+      console.log("dfa");
       props.history.push("/protected/sidebar");
     }, formData);
     if (authStatus != undefined) {
       setUserError({ value: "", state: false });
     } else {
-      console.log("sdfa");
       setUserError({ value: "Invalid login credentials", state: true });
     }
   };

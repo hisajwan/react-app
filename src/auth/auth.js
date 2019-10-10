@@ -3,6 +3,7 @@ class Auth {
     this.authenticated = false;
   }
   login = (cb, userDetails = {}) => {
+    let userData;
     if (
       Object.keys(userDetails).length > 0 &&
       userDetails.constructor === Object
@@ -12,12 +13,13 @@ class Auth {
         userDetails.password === "xebia"
       ) {
         this.authenticated = true;
-        return { ...userDetails, authenticated: this.authenticated };
+        userData = { ...userDetails, authenticated: this.authenticated };
       } else {
-        return undefined;
+        userData = undefined;
       }
     }
     cb();
+    return userData;
   };
   logout = cb => {
     this.authenticated = false;
