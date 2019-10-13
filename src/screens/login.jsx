@@ -17,7 +17,7 @@ const Login = props => {
       console.log("dfa");
       props.history.push("/protected/sidebar");
     }, formData);
-    if (authStatus != undefined) {
+    if (authStatus !== undefined) {
       setUserError({ value: "", state: false });
     } else {
       setUserError({ value: "Invalid login credentials", state: true });
